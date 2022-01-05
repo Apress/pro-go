@@ -1,0 +1,51 @@
+{{ layout "simple_layout.html" }}
+{{ $context := .}}
+{{ $details := .ShippingDetails }}
+
+<div class="p-2">
+    <h2>Check out now</h2>
+    Please enter your details, and we'll ship your goods right away!
+</div>
+
+{{ if gt (len $context.ValidationErrors) 0}}
+    <ul class="text-danger mt-3">
+        {{ range $context.ValidationErrors }}
+            <li>
+                {{ index . 0 }}: {{ index . 1 }}
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}
+
+<form method="POST" class="p-2">
+    <h3>Ship to</h3>
+    <div class="form-group">
+        <label class="form-label">Name:</label>
+        <input name="name" class="form-control" value="{{ $details.Name }}" />
+    </div>
+    <div class="form-group">
+        <label>Street Address:</label>
+        <input name="streetaddr" class="form-control" 
+            value="{{ $details.StreetAddr }}" />
+    </div>
+    <div class="form-group">
+        <label>City:</label>
+        <input name="city" class="form-control" value="{{ $details.City }}" />
+    </div>
+    <div class="form-group">
+        <label>State:</label>
+        <input name="state" class="form-control" value="{{ $details.State }}" />
+    </div>
+    <div class="form-group">
+        <label>Zip:</label>
+        <input name="zip" class="form-control" value="{{ $details.Zip }}" />
+    </div>
+    <div class="form-group">
+        <label>Country:</label>
+        <input name="country" class="form-control" value="{{ $details.Country }}" />
+    </div>
+    <div class="text-center py-1">
+        <a class="btn btn-secondary m-1" href="{{ $context.CancelUrl }}">Cancel</a>        
+        <button class="btn btn-primary m-1" type="submit">Submit</button>        
+    </div>
+</form>

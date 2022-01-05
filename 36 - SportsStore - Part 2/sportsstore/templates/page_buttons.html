@@ -1,0 +1,11 @@
+{{ $context := . }}
+<div class="btn-group pull-right m-1">
+    {{ range .PageNumbers}} 
+        {{ if eq $context.Page .}} 
+        <a class="btn btn-primary">{{ . }}</a>
+        {{ else }}
+            <a href="{{ call $context.PageUrlFunc . }}"
+                class="btn btn-outline-primary">{{ . }}</a>
+        {{ end }}
+    {{ end }}
+</div>

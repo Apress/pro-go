@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pro Go</title>
+    <link rel="stylesheet" href="/files/bootstrap.min.css" >
+</head>
+<body>
+    {{ $index := intVal (index (index .Request.URL.Query "index") 0) }}    
+    {{ if lt $index (len .Data)}}
+        {{ with index .Data $index}}    
+            <h3 class="bg-primary text-white text-center p-2 m-2">Product</h3>
+            <form method="POST" action="/forms/edit" class="m-2">
+                <div class="form-group">
+                    <label>Index</label>
+                    <input name="index" value="{{$index}}" 
+                        class="form-control" disabled />
+                    <input name="index" value="{{$index}}" type="hidden" />
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input name="name" value="{{.Name}}" class="form-control"/>
+                </div>        
+                <div class="form-group">
+                    <label>Category</label>
+                    <input name="category" value="{{.Category}}" 
+                        class="form-control"/>
+                </div>                
+                <div class="form-group">
+                    <label>Price</label>
+                    <input name="price" value="{{.Price}}" class="form-control"/>
+                </div>                        
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="/templates/" class="btn btn-secondary">Cancel</a>        
+                </div>
+            </form>
+        {{ end }}
+    {{ else }}
+        <h3 class="bg-danger text-white text-center p-2">
+            No Product At Specified Index
+        </h3>
+    {{end }}
+</body>
+</html>

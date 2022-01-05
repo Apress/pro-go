@@ -1,0 +1,31 @@
+{
+    "logging" : {
+        "level": "debug"
+    },
+    "files": {
+        "path": "files"
+    },
+    "templates": {
+        "path": "templates/*.html",
+        "reload": true
+    },
+    "sessions": {
+        "key": "MY_SESSION_KEY",
+        "cyclekey": true
+    },
+    "sql": {
+        "connection_str": "store.db",
+        "always_reset": true,
+        "commands": {
+            "Init":                 "sql/init_db.sql",
+            "Seed":                 "sql/seed_db.sql",
+            "GetProduct":           "sql/get_product.sql",
+            "GetProducts":          "sql/get_products.sql",
+            "GetCategories":        "sql/get_categories.sql",
+            "GetPage":              "sql/get_product_page.sql",
+            "GetPageCount":         "sql/get_page_count.sql",
+            "GetCategoryPage":      "sql/get_category_product_page.sql",
+            "GetCategoryPageCount": "sql/get_category_product_page_count.sql"
+        }
+    }
+}

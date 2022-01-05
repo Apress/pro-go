@@ -1,0 +1,8 @@
+{
+    "Username": "Alice",
+    "AdditionalProducts": [
+        {"name": "Hat", "category": "Skiing", "price": 10},
+        {"name": "Boots", "category":"Skiing", "price": 220.51 },
+        {"name": "Gloves", "category":"Skiing", "price": 40.20 }
+    ]
+}

@@ -1,0 +1,5 @@
+{{ define "body" }}
+    {{ range . }}
+        <h2>Product: {{ .Name }} ({{ printf "$%.2f" .Price}})</h2>
+    {{ end -}}
+{{ end }}

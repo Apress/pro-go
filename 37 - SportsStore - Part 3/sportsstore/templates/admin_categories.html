@@ -1,0 +1,56 @@
+{{ $context := . }}
+<table class="table table-sm table-striped table-bordered">
+    <thead><tr><th>ID</th><th>Name</th><th></th></tr></thead>
+    <tbody>
+        {{ range $context.Categories }}
+            {{ if ne $context.EditId .ID}}
+                <tr>
+                    <td>{{ .ID }}</td>
+                    <td>{{ .CategoryName }}</td>
+                    <td class="text-center">
+                        <form method="POST" action="{{ $context.EditUrl }}">
+                            <input type="hidden" name="id" value="{{ .ID }}" />
+                            <button class="btn btn-sm btn-warning" type="submit">
+                                Edit
+                            </button>
+                        </form>
+                    </td>                    
+                </tr>
+            {{ else }}
+                <tr>
+                    <form method="POST" action="{{ $context.SaveUrl }}" >
+                        <input type="hidden" name="id" value="{{ .ID }}" />
+                        <td>
+                            <input class="form-control" disabled 
+                                value="{{.ID}}" size="3"/> 
+                        </td>
+                        <td><input name="categoryname" class="form-control" size=12 
+                            value="{{ .CategoryName }}" /></td>
+                    <td class="text-center">
+                            <button class="btn btn-sm btn-danger" type="submit">
+                                Save
+                            </button>
+                        </td>
+                    </form>
+                </tr>
+            {{end }}
+        {{ end }}
+    </tbody>
+    {{ if eq $context.EditId 0}}
+        <tfoot>
+            <tr><td colspan="6" class="text-center">Add New Category</td></tr>
+            <tr>
+                <form method="POST" action="{{ $context.SaveUrl }}" >
+                    <td>-</td>
+                    <td><input name="categoryname" class="form-control" 
+                        size=12 /></td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-danger" type="submit">
+                            Save
+                        </button>
+                    </td>
+                </form>
+            </tr>
+        </tfoot>
+    {{ end }}    
+</table>

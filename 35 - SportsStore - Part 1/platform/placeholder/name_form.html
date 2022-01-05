@@ -1,0 +1,15 @@
+{{ layout "layout.html" }}
+
+<form method="POST" action="{{ . }}">
+    <div style="padding: 5px;">
+        <label>Name:</label>
+        <input name="name" />
+    </div>
+    <div style="padding: 5px;">
+        <label>Insert At Front:</label>
+        <input name="insertatstart" type="checkbox" value="true" />
+    </div>    
+    <div style="padding: 5px;">
+        <button type="submit">Submit</button>        
+    </div>
+</form>

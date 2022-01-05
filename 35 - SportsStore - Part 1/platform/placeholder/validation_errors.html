@@ -1,0 +1,9 @@
+{{ layout "layout.html" }}
+
+<h3>Validation Errors</h3>
+
+<ul>
+    {{ range . }}
+        <li>{{.FieldName}}: {{ .Error }}</li>
+    {{ end }}
+</ul>

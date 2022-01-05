@@ -1,0 +1,52 @@
+{
+    "logging" : {
+        "level": "information"
+    },
+    "files": {
+        "path": "files"
+    },
+    "templates": {
+        "path": "templates/*.html",
+        "reload": false
+    },
+    "sessions": {
+        "key": "MY_SESSION_KEY",
+        "cyclekey": false
+    },
+    "sql": {
+        "connection_str": "store.db",
+        "always_reset": false,
+        "commands": {
+            "Init": "sql/init_db.sql",
+            "Seed": "sql/seed_db.sql",
+            "GetProduct": "sql/get_product.sql",
+            "GetProducts": "sql/get_products.sql",
+            "GetCategories": "sql/get_categories.sql",
+            "GetPage": "sql/get_product_page.sql",
+            "GetPageCount": "sql/get_page_count.sql",
+            "GetCategoryPage": "sql/get_category_product_page.sql",
+            "GetCategoryPageCount": "sql/get_category_product_page_count.sql",
+            "GetOrder": "sql/get_order.sql",
+            "GetOrderLines": "sql/get_order_lines.sql",
+            "GetOrders": "sql/get_orders.sql",
+            "GetOrdersLines": "sql/get_orders_lines.sql",
+            "SaveOrder": "sql/save_order.sql",
+            "SaveOrderLine": "sql/save_order_line.sql",
+            "SaveProduct":          "sql/save_product.sql",
+            "UpdateProduct":        "sql/update_product.sql",
+            "SaveCategory":         "sql/save_category.sql",
+            "UpdateCategory":       "sql/update_category.sql",
+            "UpdateOrder":          "sql/update_order.sql"    
+        }
+    },
+    "authorization": {
+        "failUrl": "/signin"
+    },
+    "http": {
+        "enableHttp": false,
+        "enableHttps": true,
+        "httpsPort": 5500,
+        "httpsCert": "certificate.cer",
+        "httpsKey": "certificate.key"
+    }
+}

@@ -1,0 +1,33 @@
+{{ layout "store_layout.html" }}
+
+{{ define "left_column" }}
+    {{ $context := . }}
+    {{ handler "category" "getbuttons" $context.SelectedCategory}}
+{{end}}
+
+{{ define "right_column" }}
+    {{ $context := . }}
+    {{ range $context.Products }}
+        <div class="card card-outline-primary m-1 p-1">
+            <div class="bg-faded p-1">
+                <h4>
+                    {{ .Name }}
+                    <span class="badge rounded-pill bg-primary" style="float:right">
+                        <small>{{ printf "$%.2f" .Price }}</small>
+                    </span>
+                </h4>
+            </div>
+            <div class="card-text p-1">
+                <form method="POST" action="{{ $context.AddToCartUrl }}">
+                    {{ .Description }}
+                    <input type="hidden" name="id" value="{{.ID}}" />
+                    <button type="submit"class="btn btn-success btn-sm pull-right" 
+                        style="float:right">
+                            Add To Cart
+                    </button>                    
+                </form>
+            </div>
+        </div>
+    {{ end }}
+    {{ template "page_buttons.html" $context }}
+{{end}}

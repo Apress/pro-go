@@ -1,0 +1,8 @@
+{
+    "logging" : {
+        "level": "debug"
+    },
+    "main" : {
+        "message" : "Hello from the config file"
+    }
+}

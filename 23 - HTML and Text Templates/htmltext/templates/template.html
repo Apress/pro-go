@@ -1,0 +1,5 @@
+{{ define "mainTemplate" -}}
+    {{ range $key, $value := . -}}
+        <h1>{{ $key }}: {{ printf "$%.2f" $value.Price }}</h1>
+    {{ end }}
+{{- end }}

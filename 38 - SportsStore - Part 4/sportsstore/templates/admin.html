@@ -1,0 +1,47 @@
+{{ $context := . }}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SportsStore</title>
+    <link href="/files/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body> 
+    <div class="bg-info text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">SPORTS STORE Administration</div>
+                <div class="col-6 navbar-text text-end">
+                    {{ handler "signout" "getuserwidget" }}
+                </div>                                
+            </div>
+        </div>
+    </div>
+    
+    <div class="row m-1 p-1">
+        <div id="sidebar" class="col-3">               
+            <div class="d-grid gap-2">
+                {{ range $context.Sections }}
+                    <a href="{{ call $context.SectionUrlFunc . }}"
+                        {{ if eq . $context.ActiveSection }}
+                            class="btn btn-info">
+                        {{ else }}   
+                            class="btn btn-outline-info">
+                        {{ end }}
+                        {{ . }}
+                    </a>
+                {{ end }}
+            </div>
+        </div>
+        <div class="col-9">
+            {{ if eq $context.ActiveSection ""}}
+                <h6 class="p-2">
+                    Welcome to the SportsStore Administration Features
+                </h6>
+            {{ else }}
+                {{ handler $context.ActiveSection "getdata" }}
+            {{ end }}
+        </div>
+    </div>
+</body>
+</html>

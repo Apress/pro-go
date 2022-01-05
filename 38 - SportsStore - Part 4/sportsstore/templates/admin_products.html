@@ -1,0 +1,77 @@
+{{ $context := . }}
+<table class="table table-sm table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th><th>Name</th><th>Description</th>
+            <th>Category</th><th class="text-end">Price</th><th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ range $context.Products }}
+            {{ if ne $context.EditId .ID}}
+                <tr>
+                    <td>{{ .ID }}</td>
+                    <td>{{ .Name }}</td>
+                    <td>
+                        <span class="d-inline-block text-truncate" 
+                            style="max-width: 200px;">
+                               {{ .Description }}
+                        </span>
+                    </td>
+                    <td>{{ .CategoryName }}</td>
+                    <td class="text-end">{{ printf "$%.2f" .Price }}</td>
+                    <td class="text-center">
+                        <form method="POST" action="{{ $context.EditUrl }}">
+                            <input type="hidden" name="id" value="{{ .ID }}" />
+                            <button class="btn btn-sm btn-warning" type="submit">
+                                Edit
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {{ else }}
+                <tr>
+                    <form method="POST" action="{{ $context.SaveUrl }}" >
+                        <input type="hidden" name="id" value="{{ .ID }}" />
+                        <td>
+                            <input class="form-control" disabled value="{{.ID}}" 
+                                size="3"/> 
+                        </td>
+                        <td><input name="name" class="form-control" size=12 
+                            value="{{ .Name }}" /></td>
+                        <td><input name="description" class="form-control" 
+                             size=15 value="{{ .Description }}" /></td>
+                        <td>{{ handler "categories" "getselect" .Category.ID }}</td>
+                        <td><input name="price" class="form-control text-end" 
+                            size=7 value="{{ .Price }}"/></td>
+                        <td>
+                            <button class="btn btn-sm btn-danger" type="submit">
+                                Save
+                            </button>
+                        </td>
+                    </form>
+                </tr>
+            {{ end }}
+        {{ end }}
+    </tbody>
+    {{ if eq $context.EditId 0}}
+        <tfoot>
+            <tr><td colspan="6" class="text-center">Add New Product</td></tr>
+            <tr>
+                <form method="POST" action="{{ $context.SaveUrl }}" >
+                    <td>-</td>
+                    <td><input name="name" class="form-control" size=12 /></td>
+                    <td><input name="description" class="form-control" 
+                        size=15 /></td>
+                    <td>{{ handler "categories" "getselect" 0 }}</td>
+                    <td><input name="price" class="form-control" size=7 /></td>
+                    <td>
+                        <button class="btn btn-sm btn-danger" type="submit">
+                            Save
+                        </button>
+                    </td>
+                </form>
+            </tr>
+        </tfoot>
+    {{ end }}
+</table>

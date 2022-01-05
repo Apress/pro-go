@@ -1,0 +1,20 @@
+{{ layout "layout.html" }}
+
+{{ if ne . "" }}
+    <h3 style="padding: 10px;">{{. }}</h3>
+{{ end }}
+
+<form method="POST" action="/signin">
+    <div style="padding: 5px;">
+        <label>Username:</label>
+        <input name="username" />
+    </div>
+    <div style="padding: 5px;">
+        <label>Password:</label>
+        <input name="password" />
+    </div>
+    <div style="padding: 5px;">
+        <button type="submit">Sign In</button>        
+        <button type="submit" formaction="/signout">Sign Out</button>        
+    </div>
+</form>

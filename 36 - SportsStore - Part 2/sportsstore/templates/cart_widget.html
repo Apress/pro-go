@@ -1,0 +1,15 @@
+{{ $context := . }}
+{{ $count := $context.Cart.GetItemCount }}
+    <small class="navbar-text">
+        {{ if gt $count 0 }}
+            <b>Your cart:</b>
+            {{ $count }} item(s)
+            {{ printf "$%.2f" $context.Cart.GetTotal }}
+        {{ else }}
+            <span class="px-2 text-secondary">(empty cart)</span>
+        {{ end }}
+    </small>
+<a href={{ $context.CartUrl }}
+        class="btn btn-sm btn-secondary navbar-btn">
+    <i class="fa fa-shopping-cart"></i>
+</a>

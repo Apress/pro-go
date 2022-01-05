@@ -1,0 +1,53 @@
+{{ layout "simple_layout.html" }}
+{{ $context := . }}
+
+<div class="p-1">
+    <h2>Your cart</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Quantity</th><th>Item</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Subtotal</th>
+                <th />
+            </tr>
+        </thead>
+        <tbody>
+            {{ range $context.Cart.GetLines }}
+                <tr>
+                    <td class="text-start">{{ .Quantity }}</td>
+                    <td class="text-start">{{ .Name }}</td>
+                    <td class="text-end">{{ printf "$%.2f" .Price }}</td>
+                    <td class="text-end">
+                        {{ printf "$%.2f" .GetLineTotal }}
+                    </td>
+                    <td>
+                        <form method="POST" action="{{  $context.RemoveUrl }}">
+                            <input type="hidden" name="id" value="{{ .ID }}" />
+                            <button class="btn btn-sm btn-danger" type="submit">
+                                Remove
+                            </button>
+                        </form>
+                    </td>                    
+                </tr>
+                
+            {{ end }}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-end">Total:</td>
+                <td class="text-end">
+                    {{ printf "$%.2f" $context.Cart.GetTotal }}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="text-center">
+        <a class="btn btn-secondary" href="{{ $context.ProductListUrl }}">
+            Continue shopping
+        </a>
+        <a class="btn btn-primary" href="{{ $context.CheckoutUrl }}">
+            Checkout
+        </a>
+    </div>
+</div>

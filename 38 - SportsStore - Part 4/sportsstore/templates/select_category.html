@@ -1,0 +1,10 @@
+{{ $context := . }}
+
+<select class="form-select" name="category" value="{{ $context.Current }}">
+    <option value="0">Select a category</option>
+    {{ range $context.Categories }}
+        <option value="{{.ID}}" {{ if eq $context.Current .ID }}selected{{end}}>
+            {{.CategoryName}}
+        </option>
+    {{ end }}
+</select>
