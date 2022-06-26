@@ -1,13 +1,7 @@
 # Errata for *Pro Go*
 
-On **page xx** [Summary of error]:
- 
-Details of error here. Highlight key pieces in **bold**.
+This file contains errors that are likely to prevent the code examples from working as described in ths book. See [this](typos.md) file for small mistakes that I intend to correct in the next edition.
 
-***
+---
 
-On **page xx** [Summary of error]:
- 
-Details of error here. Highlight key pieces in **bold**.
-
-***
+No errors have been reported
