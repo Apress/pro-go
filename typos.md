@@ -18,9 +18,20 @@ It should be:
 
 ---
 
+On page 77, the text following the listing contains this sentence:
+
+>   The listing defines variables named `discount` and `salesperson`, neither of which is used in the rest of 
+the code. 
+
+The name of the second variable is `salesPerson`, with an uppercase `P`.
+
+(Thanks to Tawfik Khalifeh for reporting this problem)
+
+---
+
 **Chapter 5**
 
-Table 5-7 contains the following text in the description for the `Floor` function:
+On page 102, Table 5-7 contains the following text in the description for the `Floor` function:
 
 >   The largest integer that is less than 27.1, for example, is 28.
 
@@ -29,6 +40,17 @@ It should be:
 >   The largest integer that is less than 27.1, for example, is ***27***.
 
 (Thanks to Francisco Vicedo and Korbai Zoltán for reporting this problem)
+
+---
+
+On page 114, the text following Listing 5-31 reads:
+
+> The `Itoa` function accepts an `int` value, which is explicitly converted to an `int64` and passed to the 
+`ParseInt` function.
+
+This should be the `FormatInt` function.
+
+(Thanks to Tawfik Khalifeh for reporting this problem)
 
 ---
 
