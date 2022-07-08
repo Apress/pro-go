@@ -62,6 +62,14 @@ On page 125, Figure 6-5 uses a semi-colon instead of a colon in the exploding vi
 
 ---
 
+On page 134, Listing 6-18 contains a slice, but should use an array, like this:
+
+    products := [3]string { "Kayak", "Lifejacket", "Soccer Ball"}
+
+(Thanks to Tawfik Khalifeh for reporting this problem)
+
+---
+
 **Chapter 7**
 
 On page 163, Listing 7-18 contains this statement:
