@@ -245,12 +245,71 @@ should be:
 
 **Chapter 16**
 
+On page 415, the description of the EqualFold function in `Table 16-3` should be:
+
+>   This function performs a case-insensitive comparison and returns true ***if*** strings s1 and s2 are the same.
+
+(Thanks to Tawfik Khalifeh for reporting this problem)
+
+---
+
+On page 417, the description for the ToUpper function in `Table 16-4` should be:
+
+
+>   This function returns a new string containing the characters in the specified string mapped to ***uppercase***.
+
+(Thanks to Tawfik Khalifeh for reporting this problem)
+
+----
+
+On page 417, the description for the Title function in `Table 16-4` is incorrect. The first character of each word is transformed, but the remaining characters are left unchanged.
+
+(Thanks to Tawfik Khalifeh for reporting this problem)
+
+---
+
 On page 417, Table 16-4 gives the impression that the `Title` function transforms a string value, rather than creating a new string.
 
 (Thanks to Francisco Vicedo for reporting this problem)
 
 ---
 
-On Page 421, Listing 16-8 contains two statements that use the `LastIndex` function and omits the `LastIndexAny` function.
+On page 421, Listing 16-8 contains two statements that use the `LastIndex` function and omits the `LastIndexAny` function.
 
 (Thanks to Francisco Vicedo for reporting this problem)
+
+---
+
+On page 434, this sentence:
+
+> The strings package provides the Builder type, which has not exported fields but does provide a set of 
+methods that can be used to efficiently build strings gradually, as described in Table 16-12.
+
+should be:
+
+>   The strings package provides the Builder type, which has ***no*** exported fields but does provide a set of 
+methods that can be used to efficiently build strings gradually, as described in Table 16-12.
+
+(Thanks to Tawfik Khalifeh for reporting this problem)
+
+---
+
+On page 434, the description for the Grow function in `Table 16-12` should be:
+
+>   This method increases the number of bytes ***~~used~~*** allocated by the builder to store the string that is being built.
+
+(Thanks to Tawfik Khalifeh for reporting this problem)
+
+---
+
+On page 458, this sentence:
+
+>   I added chevrons around the formatted value in Listing 17-13 to demonstrate that spaces are used for 
+padding when the specified with is greater than the number of characters required to display the value.
+
+should be:
+
+>   I added chevrons around the formatted value in Listing 17-13 to demonstrate that spaces are used for 
+padding when the specified ***width*** is greater than the number of characters required to display the value.
+
+(Thanks to Tawfik Khalifeh for reporting this problem)
