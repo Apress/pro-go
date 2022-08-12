@@ -99,6 +99,11 @@ These statements should include a colon, like this:
 
 **Chapter 8**
 
+On page 199, Figure 8-3 incorrectly describes the parameter types of the printPrice function as values. The word **Value** in the figure should read **Type**.
+
+(Thanks to Edwin Majnoonian for reporting this problem)
+
+---
 
 On page 206, the paragraph following Listing 8-14 contains the following sentence:
 
