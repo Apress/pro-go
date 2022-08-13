@@ -29,6 +29,12 @@ The name of the second variable is `salesPerson`, with an uppercase `P`.
 
 ---
 
+On page 83 and subsequent pages, references to the the `nil` type have been omitted from the index.
+
+(Thanks to Edwin Majnoonian for reporting this problem)
+
+---
+
 **Chapter 5**
 
 On page 102, Table 5-7 contains the following text in the description for the `Floor` function:
