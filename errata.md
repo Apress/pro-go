@@ -4,4 +4,17 @@ This file contains errors that are likely to prevent the code examples from work
 
 ---
 
-No errors have been reported
+**Chapter 33**
+
+On Page 909, the getAnonymousFieldMethods function is shown with the wrong parameters and result. This statement:
+
+    func getAnonymousFieldMethods(target []reflect.Type) reflect.Method {
+
+should be:
+
+    func getAnonymousFieldMethods(target reflect.Type) []reflect.Method {
+
+
+(Thanks to Yaroslav Lazarev for reporting this problem)
+
+---
