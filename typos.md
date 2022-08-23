@@ -324,3 +324,11 @@ should be:
 padding when the specified ***width*** is greater than the number of characters required to display the value.
 
 (Thanks to Tawfik Khalifeh for reporting this problem)
+
+---
+
+**Chapter 34**
+
+On page 928, the first sentence in the ***Updating Request Handling*** section specifies the wrong location for the file. It should be the `http/handling` folder, as described in the caption for `Listing 34-13`.
+
+(Thanks to Yaroslav Lazarev for reporting this problem)
