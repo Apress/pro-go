@@ -6,6 +6,13 @@ This file contains smaller errors that are unlikely to prevent the code examples
 
 **Chapter 4**
 
+On page 65, the second item in Table 4-4 is `unit` but should be `uint`.
+
+(Thanks to Erik Bennett for reporting this problem)
+
+---
+
+
 On page 70, the title for Listing 4-12 is:
 
 > Using Constants in the main.go File in the basicFeatures Folder
@@ -251,6 +258,12 @@ should be:
 > The *Product field is embedded, which means that its name ***is*** its type
 
 (Thanks to Joseph Kashi and Francisco Vicedo for reporting this problem)
+
+---
+
+On page 337, the description of method promotion is incorrect. See https://go.dev/ref/spec#Struct_types for the correct promotion rules.
+
+(Thanks to ISAK Neuman for reporting this problem)
 
 ---
 
