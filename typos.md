@@ -12,6 +12,14 @@ On page 65, the second item in Table 4-4 is `unit` but should be `uint`.
 
 ---
 
+On page 65, the description for `byte` in Table 4-4 should read:
+
+>There are no byte literals. Bytes are typically expressed as integer literals (such as 101) or ***rune*** literals ('e') since the byte type is an alias for the uint8 type.
+
+(Thanks to Rog for reporting this problem)
+
+---
+
 
 On page 70, the title for Listing 4-12 is:
 
@@ -22,6 +30,12 @@ It should be:
 > Using ***Variables*** in the main.go File in the basicFeatures Folder
 
 (Thanks to Michael for reporting this problem)
+
+---
+
+On page 73, the `unit` entry in Table 4-5 should be `uint`.
+
+(Thanks to Rog for reporting this problem)
 
 ---
 
