@@ -56,6 +56,18 @@ On page 83 and subsequent pages, references to the the `nil` type have been omit
 
 ---
 
+On page 92, the entries in Table 5-4 for the `/` and `%` are incorrect. The definition for the `/` operator should be:
+
+>   This **operator**  returns the quotient of two **operands**.
+
+The definition for the `%` operator should be:
+
+>  This **operator**  returns the remainder, which is similar to the modulo operator provided by other programming languages but can return negative values, as described in the “Using the Remainder Operator” section.
+
+(Thanks to Rog for reporting this issue)
+
+---
+
 **Chapter 5**
 
 On page 102, Table 5-7 contains the following text in the description for the `Floor` function:
