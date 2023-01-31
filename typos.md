@@ -366,6 +366,17 @@ padding when the specified ***width*** is greater than the number of characters 
 
 ---
 
+**Chapter 20**
+
+The text before Listing 20-9 should be:
+
+> Pipes are used to connect code that consumes data through a Reader and code that produces **data** through a Writer. 
+
+(Thanks to Hernán Laborde for reporting this problem)
+
+
+---
+
 **Chapter 34**
 
 On page 928, the first sentence in the ***Updating Request Handling*** section specifies the wrong location for the file. It should be the `http/handling` folder, as described in the caption for `Listing 34-13`.
