@@ -163,9 +163,11 @@ On page 214, the calcTotalPrice function doesn't calculate a total price. It act
 
 ---
 
-On page 217, the description of the results order doesn't match the actual output.
+On page 217, the description of the results produced by `Listing 8.24` order doesn't match the actual output. The text should read:
 
-(Thanks to Francisco Vicedo for reporting this problem)
+>   Immediately before the function returns, Go will perform the calls scheduled with the defer keyword in the **reverse** of the order in which they were defined.
+
+(Thanks to Francisco Vicedo and Eric Jakstadt for reporting this problem)
 
 ---
 
